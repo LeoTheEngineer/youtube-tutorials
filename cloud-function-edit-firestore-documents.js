@@ -1,7 +1,7 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 
-exports.newCloudFunction = functions.region('us-central1').runWith({memory: '128MB'}).https.onCall((data, context) => {
+exports.updateFirestore = functions.region('us-central1').runWith({memory: '128MB'}).https.onCall((data, context) => {
   if (!context.auth || !context.auth.uid) {
     return;
   }
